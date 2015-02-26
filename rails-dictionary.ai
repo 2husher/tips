@@ -1,0 +1,174 @@
+01.
+Установить ruby 2.1
+* rvm install 2.2.0
+Создать новый gemset для использования по умолчанию
+* rvm use 2.2.0@rails4.2 --create --default
+Показать все версии ruby
+* rvm list
+Показать текущий gemset
+* rvm current
+Установить rails 4.2
+* gem install rails -v 4.2.0
+Показать местоположения гема
+* bundle show rails
+
+
+ДОМЕН
+ПОЛЬЗОВАТЕЛЬ
+- ник string
+- имя string
+- фамилия string
+- почта string
+- админ bool
+- УРОК или СЛОВА?
+= уроки пройденные(по словам отдельно)
+= выученный урок
+= повторенные слова
+= слова для дальнейшего повторения(отмеченные)
+
+
+ФИДБЕК
+- ПИСЬМО обратной связи, хранится на сервере, в текстовом варианте
+= или отсылать письмо мне через gmail
+
+
+СЛОВА = model Entity
+- слово string
+- перевод string
+- пример использования в предложении text
+- часть речи string
+Entity
+word:string               = tempt
+translation:string        = искушать(через ,-пробел)
+sentence:text             = Don't tempt me.
+belongs_to :part_of_speech
+belongs_to :dictionary
+belongs_to :lesson
+
+model Letter
+name:string
+has_many :entities
+
+PartOfSpeech
+name:string
+has_many :entities
+
+СЛОВАРЬ = model Dictionary
+- СЛОВА
+= в алфавитном порядке EN
+= в алфавитном порядке RU
+= по частям речи
+Dictionary
+has_many :entities
+= def alphabet_order_en
+= def alphabet_order_ru
+= def parts_of_speech
+
+
+УРОК = model Lesson
+- номер
+- СЛОВА (10 штук)
+Lesson
+number:integer        = 14
+has_many :entities
+
+
+ИГРА-EN-RU = Game_En_Ru не нужна модель в БД, может быть контроллер
+- УРОК как параметр
+= случайный порядок слов из урока английский русский
+= подсказка 1 - часть речи
+= подсказка 2 - предложение
+= ответ - перевод
+Game_En_Ru
+
+
+
+
+ИГРЫ-RU-EN
+- УРОК
+= случайный порядок русский английский
+= ответ - перевод
+
+заполнить через seed или через fixtures
+
+
+* rake db:migrate:reset ЛУЧШЕ rake db:reset
+* UTF-8 в открытии русского файла
+* нормальный prompt без перезаписывания
+
+* Body padding required
+  The fixed navbar will overlay your other content, unless you add padding to the top of the <body>. Try out your own values or use our snippet below. Tip: By default, the navbar is 50px high.
+  body { padding-top: 70px; }
+  Make sure to include this after the core Bootstrap CSS.
+
+* params[:controller]
+
+* @media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+  }
+
+* http://jsfiddle.net/5udtC/
+
+* button_to_function(name, function=nil, html_options={}) public уже deprecated
+
+* In Rails 4 turbolinks is active by default.
+That means, that $(document).ready() is not executed, when you load a new page.
+
+turbolink fires a new event page:load. You can use this to run your javascript code:
+
+$(document).on('page:load', your_start_function);
+There is an excelent rails cast on turbolinks
+
+* rails button id
+
+* как передать @instance variable в js. Ответ: лучше не делать, один - на сервере, другой - у клиента
+As far as i know there is no way to do it directly and the reason is fairly simple too, html is executed at the server side and javascript is a client side language which means its executed in your local browser, thats why if you even try to pass a variable between the two you'll have to make a request to the server, However this problem is tackled by calling an AJAX request, this AJAX request does the same thing as sending a new request to the server however it does that without refreshing or reloading the page to it gives the users the illusion that no request was made.
+
+a guy asks a similar question here:
+
+http://www.quora.com/Ruby-on-Rails/Can-I-pass-a-JavaScript-variable-to-a-Rails-method
+
+and you can learn more about AJAX here:
+
+http://www.w3schools.com/ajax/default.asp
+
+* display:none
+
+* includes для меньшего обращения к кэшу
+
+* @entities = d.entities.includes(:part_of_speech).all
+
+* = render partial: 'lesson', collection: @lessons #=> ищет в текущей папке
+  http://api.rubyonrails.org/classes/ActionView/PartialRenderer.html
+
+VS
+
+= render @lessons #=> ищет в папке lessons/
+
+* include paginate
+http://stackoverflow.com/questions/23722851/will-paginate-associations
+http://stackoverflow.com/questions/9363764/will-paginate-includes-and-ordering-by-a-joined-table
+http://stackoverflow.com/questions/15007948/gem-will-paginate-ignore-include-parameter-of-activerecord-find-method
+http://stackoverflow.com/questions/9215943/how-to-avoid-n1-queries-with-will-paginate
+http://stackoverflow.com/questions/7315361/will-paginate-with-multiple-tables
+http://rubyinrails.com/2014/03/pagination-in-rails-using-will_paginate-gem/
+http://stackoverflow.com/questions/2868484/rails-using-will-paginate-with-a-complex-association-find
+
+* PROBLEM: heroku bootstrap не работает и jQuery не работает
+
+* css и jQuery для heroku
+/config/environments/production.rb
+  config.cache_classes = true
+  config.serve_static_assets = true
+  config.assets.compile = true
+  config.assets.digest = true
+/config/database.yml
+  production:
+    adapter: postgresql
+    encoding: unicode
+    database: Your_appname_production
+bundle exec rake assets:precompile
+
+* rspec test-овая база заново не создается полностью, но обнуляется и скачет постоянно id 1-2-3-4 и тд. Так и должно быть?

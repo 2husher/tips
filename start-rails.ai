@@ -1,0 +1,275 @@
+1. В Gemfile
+
+gem 'haml-rails'
+gem 'html2haml'
+
+group :development, :test do
+  gem 'sqlite3', '1.3.8'
+  gem 'rspec-rails', '2.14.2'
+  gem 'minitest'
+end
+
+group :test do
+  gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails'
+end
+
+2. создать /spec/features
+
+describe ИЛИ feature
+it ИЛИ scenario
+
+3. Переконвертировать и удалить все .erb
+find . -name \*.erb -print | sed 'p;s/.erb$/.haml/' | xargs -n2 html2haml
+find ./ -name *erb | while read line; do rm $line; done
+
+4. Добавить title
+
+module ApplicationHelper
+  def title(*names)
+    unless names.empty?
+      content_for :title do
+        (names << "Ticketee").join(" - ")
+      end
+    end
+  end
+end
+
+%title
+  - if content_for? :title
+    = yield(:title)
+  - else
+    Ticketee
+
+- title(@project.name, "Projects")
+
+5. Добавить нотификацию
+
+- flash.each do |key, value|
+      .flash{id: key}= value
+
+6. FactoryGirl
+
+В spec/factories/project_factory.rb
+
+FactoryGirl.define do
+  factory :project do
+    name "Example project"
+  end
+end
+
+7. Удалить тестовые изменения
+
+git add .
+git reset --hard
+
+8. зависимость для модели
+
+project:references
+ТО ЖЕ ЧТО И
+project_id:integer
+
+9. simple_format конвертит переводы строк в <br>
+
+10. edit_project_ticket_path(@project, @ticket)  ЭТО [:edit, @project, @ticket]
+
+11. в sublime Ctrl+P - выбираем по названию файл
+
+12. смотрим в схему schema.rb
+    названия пишем в первой строке нового файла
+    в консоли u -- c ассоциация играемся
+    в консоли c -- p и u -- w -- p играемся, тестим
+    получается, что для user много projects и наоборот, хотя всего 2 юзера и 2 проекта
+    _ - в консоли содержит предыдущее значение
+    Project.last(2) - последние 2
+    Work.find_by(hours: 7) - первое попавшееся с hours=7
+    p.errors; p.valid?
+
+13. сначала составляет домен моделей
+      - в текстовом файле
+    пишем сразу scaffold но работает только в моделях
+
+14. rails guide
+      - active record migrations
+      - active record assotiations
+      - active record validations
+      - layouts and rendering
+      - asset pipeline overview
+      - turbolinks
+      - form helpers
+      - working with JS in Rails
+      - action mailer overview
+
+15. t.decimal :hours, precision: 5, scale: 2
+    database.yml уже оптимизированный
+
+    [].blank? => true
+    {}.blank? => true
+    ''.blank? => true
+    "".blank? => true
+    "     ".blank? => true
+    '     '.blank? => true
+    nil.blank? => true
+    [].present? => false
+
+    {}.present? => false
+    ''.present? => false
+    "".present? => false
+    "    ".present? => false
+    '    '.present? => false
+    nil.present? => false
+
+16. %p Company: #{@project.company.name} - для haml если в одной строке и текст и переменные
+    %p= "Company: #{@project.company.name}" - так красивее и понятно, что в строке интерполяция,
+                                              и подсветка синтаксиса
+
+17. разобраться и исправить
+    %li{:class => "#{controller_name == 'companies' ? 'active' : ''}" }
+      = link_to 'Works', works_path
+
+18. как отрисовывать что-либо на canvas из html5
+в .haml.html задаем в той же строке, что и холст его ширину и высоту
+= content_tag('canvas', 'jjj', id: 'clock', width: "300px", height: "300px")
+ , width: "300", height: "300"
+
+в .css с теми же параметрами задаем область, чтобы ей управлять
+  canvas#clock{
+    width: 300px;
+    height: 300px;
+
+Если не задать параметры в html, то не найдя их холст примет значения по умолчанию 150x300 и будет все в них масштабировать
+
+Если различаются исходные параметры и в css, то будет масштабировать, растягивать или сжимать
+
+http://stackoverflow.com/questions/2588181/canvas-is-stretched-when-using-css-but-normal-with-width-height-properties
+https://html.spec.whatwg.org/multipage/scripting.html#attr-canvas-width
+
+19. def show
+      render nothing: true
+      render text: 'hey'
+
+20. setInterval( function() { funca(10,3); }, 500 );
+
+21. http://www.w3schools.com/canvas/canvas_clock_start.asp
+
+22.
+если так в def show проекта
+    @work = @project.works.new
+    то во вьюхе уже этот work входит в список @project.works.each, поэтому идет как nil и отображается в партиале work с ошибкой
+а если так
+    @work = Work.new
+    @work.project = @project
+    то во вьюхе этот work НЕ входит в список @project.works.each
+
+23. Хороший способ отладки
+    respond_to do |format|
+      format.html
+      format.json { render json: @project.works}
+    end
+
+24. ???
+почему пишет сначала work work work, а затем уже заглавие таблицы?
+- if @project.works.size > 0
+  %table
+    %tbody
+      %tr
+        %th View
+        %th User
+        %th Project
+        %th Date/Time
+        %th Hours
+      - @project.works.each do |work|
+        = render text:'work'
+
+
+/        - @project.works.each do |work|
+/          = puts work
+/           = render 'works/work'
+
+25. ???
+  что-то с разницей в work на своей странице и на странице проекта
+
+26.
+\  %p This is #{h quality} cake!
+\  %p= "This is #{h quality} cake!"
+
+27. очень веселая конструкция, вложенные #{}
+\  %p= "Document: #{link_to @work.doc, "/uploads/#{@work.doc}", target: '_blank'}".html_safe
+
+
+28.
+default_scope lambda { order('categories.name') }
+РАВЕН
+default_scope { order('categories.name') }
+РАВЕН
+default_scope { order('name') }  ВЫЗЫВАЕТСЯ КАК Categories.order
+
+
+class Shirt < ActiveRecord::Base
+  СИНТАКСИЧЕСКИЙ САХАР
+  scope :red, -> { where(color: 'red') }
+
+  def self.red
+    where(color: 'red')
+  end
+end
+
+
+scope :lowdefaultrate, -> { where('default_rate < 100') }
+
+scope :published,   -> { where("articles.published_at IS NOT NULL") }
+ИЛИ
+scope :published,   -> { where("published_at IS NOT NULL") }
+
+
+29.
+if article.present? && !article.published?
+РАВЕН
+if article && !article.published?
+
+30.
+render action: 'new'
+
+31.
+helper_method :controller_method - делает видным метод контроллера во вьюхах
+
+хелперы делаются видными в контроллерах через include
+
+32.
+redirect_to login_path, notice: "Please log in to continue" and return false
+
+ТОЖЕ САМОЕ
+
+redirect_to login_path, :notice => "Please log in to continue"
+return false
+
+* The and is there only for you to be able to write the return false at the same line as the previous statement.
+* redirect_to обычно возвращает вариант true
+
+После redirect_to выполнение метода продолжается. redirect_to - это не return
+* https://gist.github.com/jcasimir/1210155
+
+33.
+ВЫДАСТ ошибку двойного рендеринга
+  def do_something
+    redirect_to action: "elsewhere"
+    render action: "overthere" # raises DoubleRenderError
+  end
+
+создали условие для выполнения или redirect_to, или render
+  def do_something
+    redirect_to(action: "elsewhere") and return if monkeys.nil?
+    render action: "overthere" # won't be called if monkeys is nil
+  end
+
+34.
+в RUBY def f; return; end возвращает nil
+
+35.
+articles -> form -> Categories задница с заданием вариантов
+
+articles -> show -> notify_friend on click выезжает
+
+notify_friend -> display:none
+
+div_for comment или article

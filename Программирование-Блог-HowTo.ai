@@ -1,0 +1,517 @@
+*****************************************************************************************
+TASK_ID: 0
+TASK_NAME: Шаблон
+*****************************************************************************************
+TASK_DESC:
+
+TASK_END
+*****************************************************************************************
+****************************************************************************************
+TASK_ID: 2
+TASK_NAME: Пройти railscasts
+*****************************************************************************************
+TASK_DONE: 2014-09-03
+http://railscasts.com/episodes/268-sass-basics
+http://railscasts.com/episodes/85-yaml-configuration-file
+http://railscasts.com/episodes/84-cookie-based-session-store
+http://railscasts.com/episodes/83-migrations-in-rails-2-0
+http://railscasts.com/episodes/82-http-basic-authentication
+http://railscasts.com/episodes/81-fixtures-in-rails-2-0
+  has_and_belongs_to_many
+http://railscasts.com/episodes/80-simplify-views-with-rails-2-0
+  <%= render :partial => @products %>
+  <%= render :partial => @product %>
+  _product.html.erb
+    <% div_for product do %>
+      <h2><%= link_to h(product.name), product %></h2>
+      ...
+    <% end %>
+  <% form_for @product do |f| %>
+
+  http://weblog.jamisbuck.org/2007/1/22/named-explicit-routes
+TASK_DONE: 2014-09-05
+http://railscasts.com/episodes/77-destroy-without-javascript
+    link_to_function name, "confirm_destroy(this, '#{url}')", :href => fallback_url
+http://railscasts.com/episodes/16-virtual-attributes
+    создает full_name и full_name=(name) геттер и сеттер, чтобы реализовать вирт. аттриб в бд
+http://railscasts.com/episodes/73-complex-forms-part-1
+    fields_for "project[task_attributes][]
+    project.save - сохраняет и все дочерние элементы, если создавать одновременно
+http://railscasts.com/episodes/74-complex-forms-part-2
+    render :partial => 'task', :collection => @project.tasks
+    link_to_remote - дергает серверную сторону с использованием js
+    link_to_function - работает с js чисто на стороне клиента
+    link_to_function name do |page|
+      page.insert_html :bottom, :tasks, :partial => 'task', :object => Task.new
+    end
+    link_to_function "remove", "$(this).up('.task').remove()"
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 3
+TASK_NAME: ручная настройка и запуск сети wifi на компе, разные советы
+*****************************************************************************************
+TASK_DESC:
+1. запуск сети
+    * sudo systemctl start NetworkManager.service
+    * nmcli dev wifi connect Sasha-wifi password --------
+2. маунтим диск ntfs
+    * ВЕРНО:   mount -t ntfs-3g /dev/sda5 /mnt/data
+    * НЕВЕРНО: sudo mount -t ntfs -o nls=utf8,umask=0222 /dev/sda5 /mnt/data
+3. иногда приходится для vbox грузить драйвера
+    * modprobe vboxdrv
+4. GTK
+      http://alexander-simakov.blogspot.com/2008/08/rubygtk2.html
+      http://ruby-gnome2.sourceforge.jp/hiki.cgi?tut-gtk2-contwidg-fixedcont
+      http://ruby-gnome.sourceforge.net/tutorial/
+5. arch
+      https://wiki.archlinux.org/index.php/Wireless_network_configuration
+      https://wiki.archlinux.org/index.php/NetworkManager
+      https://wiki.archlinux.org/index.php/Systemd#Using_units
+      https://wiki.archlinux.org/index.php/WPA_supplicant
+6. группы
+      /etc/group - какие-то группы
+      groups ai - показывает wheel storage power users
+      users не имеет ai в своей строчке в этой файле
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 5
+TASK_NAME: Установка rails на систему
+*****************************************************************************************
+TASK_DESC:
+1. curl -sSL https://get.rvm.io | bash -s stable
+2. rvm install 2.0.0
+3. rvm use 2.0.0@rails4.0.4 --create --default
+4. subl ~/.gemrc
+   >install: --no-rdoc --no-ri
+   >update:  --no-rdoc --no-ri
+5. gem install rails -v=4.0.4
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 6
+TASK_NAME: Установка ssh на комп для связи с github
+*****************************************************************************************
+TASK_DESC:
+1. pacman -S openssh
+2. ssh-keygen -t rsa -C "email@address"
+3. eval "$(ssh-agent -s)"
+4. ssh-add ~/.ssh/id_rsa
+5. pacman -S xclip
+6. xclip -sel clip < ~/.ssh/id_rsa.pub
+7. https://github.com/settings/ssh -> Add ssh key
+8. git clone git@github.com:2husher/libtool.git
+9. pacman -S nodejs - js runtime
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 7
+TASK_NAME: Установка git
+*****************************************************************************************
+TASK_DESC:
+1. pacman -S git
+2. pacman -S tk (для wish в gitk)
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 8
+TASK_NAME: Настройка heroku
+*****************************************************************************************
+TASK_DESC:
+1. wget -qO- https://toolbelt.heroku.com/install.sh | sh
+2. heroku login
+3. heroku create
+4. git push heroku master
+5. heroku keys:add #https://devcenter.heroku.com/articles/keys
+6. heroku logs
+7. heroku run rake db:migrate
+    ИЛИ ЛУЧШЕ
+   heroku run rake db:reset
+8. heroku open
+
+TODO:  https://devcenter.heroku.com/articles/ruby-default-web-server
+
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 9
+TASK_NAME: Настройка postgres на локальной машине
+*****************************************************************************************
+TASK_DESC:
+1. Установка через pacman
+2. sudo -i -u postgres - работает при выключенном сервере. Это просто переключение в соответствующего пользователя на локлаьном компе
+2.1 initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
+2.2 createuser --interactive
+2.3 createdb myDatabaseName
+
+Старт сервера через systemctl
+* sudo systemctl start postgresql
+
+3. psql -U postgres - работает только при запущенном сервере. Это консоль
+   psql -U postgres -d myDatabaseName
+3.1 \du
+3.2 \dt
+3.3 создание пользователя
+3.4 для тестовой базы поменял права на юзера для создания дб
+    ALTER USER rails CREATEDB;
+3.5 сделал владельцем своего юзера
+    CREATE DATABASE library_development WITH OWNER rails;
+http://www.thegeekstuff.com/2009/04/15-practical-postgresql-database-adminstration-commands/
+
+http://www.tutorialspoint.com/postgresql/postgresql_select_database.htm
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 10
+TASK_NAME: Настраивал рельсы Rspec
+*****************************************************************************************
+TASK_DESC:
+1. путь для тестов контроллеров - spec/requests/*_spec.rb
+      я пробовал другие варианты, типа spec/page, но тогда не находит контроллеров
+
+   для моделей - это spec/models/*_spec.rb
+
+   еще вариант пути - это spec/controllers/*_spec.rb - но это по умолчанию и Хартл не советует использовать
+
+2. Сравнивал Rails в туториале 3.0 и 3.2
+   появился provide
+   page вместо response
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 11
+TASK_NAME: Маршруты Rails
+*****************************************************************************************
+TASK_DESC:
+  все 4 варианта дают именованные маршруты
+    get "about", to: "static_pages#about", via: 'get'
+    match "about", to: "static_pages#about", via: 'get'
+    get "contacts" => "static_pages#contacts", as: :contacts
+    get "help"     => "static_pages#help"
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 12
+TASK_NAME: браузерные пути к картинками и css в rails
+*****************************************************************************************
+TASK_DESC:
+В браузерной строке можно ввести следующие адреса, чтобы добраться до картинок и стилевых файлов:
+
+http://localhost:3000/assets/library.jpg
+http://localhost:3000/assets/custom.css
+http://localhost:3000/assets/application.css
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 13
+TASK_NAME: Настройка rspec для транзиктивного поведения
+*****************************************************************************************
+TASK_DESC:
+1. RSpec по умолчанию восстанавливает исходное состояние test-базы после каждого теста
+2. Тестом считается код, заключенный в it "..." do ... end блок
+3. Let используется для того, чтобы в отличие от присваивания не выполнять выражение справа, то есть выполняет транзакционную функцию для выражений типа let(:item) { item = FactoryGirl.create :item}. В этом случае, изменения в тестовой БД не происходят
+4. Before(:each) также выполняет транзакционную функцию
+5. subject{ item } в связке с FactoryGirl также транзакционный
+6. Все это верно для Rspec v="2.13.1", но не верно для v="2.11.0"
+7. Before(:all) НЕ транзакционна, данные нужно удалять в after(:all)
+
+!!! Если возникают какие-то непонятные проблемы, стоит первым делом поменять версии gem'ов, поставить не дефолтные/последние, а те, что указаны в туториалах или книгах или с которыми работал раньше
+
+http://stackoverflow.com/questions/3497135/why-isnt-factory-girl-operating-transactionally-for-me-rows-remain-in-databa/3498959#3498959
+http://mwilden.blogspot.com/2010/11/beware-of-rspecs-before-all.html
+
+! Factory girl вызываются/инициализируются при каждом тесте
+
+тестировать содержимое страниц, формы, изменения, переход по адресам
+-идентиф. страницу по названию title
+edit
+-сама страница
+-что будет когда переходим невалидная инфа
+-что будет когда переходим валидная инфа
+
+
+yield(:title) возвращает пустой а не nil, если нет тайтла
+
+страницы - только те которые есть во вьюхах, их содержимое и надо проверять
+TASK_END
+*****************************************************************************************
+****************************************************************************************
+TASK_ID: 14
+TASK_NAME: Попытка настроить бридж с vbox ОС на wifi
+*****************************************************************************************
+TASK_DESC:
+ip link show
+ip link show dev enp0s3
+ip link set enp0s3 up
+
+systemctl start dhcpcd@enps03
+systemctl enable dhcpcd@enps03
+
+systemctl enable dhcpcd
+systemctl enable dhcpcd.service
+
+dhcpcd eth0
+
+/etc/rc.conf - Main Configuration for Arch Linux
+
+dmesg |grep vbox
+
+/etc/modules-load.d
+    vboxdrv
+    vboxnetflt
+    vboxnetadp
+
+modprobe
+    http://linuxmanpages.com/man5/modprobe.conf.5.php
+
+lsmod | grep vbox
+
+/etc/network/interfaces
+
+modprobe vboxnetflt
+
+lspci -v
+
+https://wiki.archlinux.org/index.php/Network_Configuration#dhcpcd
+https://wiki.archlinux.org/index.php/Dhcpcd#Running
+https://wiki.archlinux.org/index.php/Initscripts/rc.conf
+https://wiki.archlinux.org/index.php/Kernel_modules
+
+# mount /dev/sdaX /mnt
+# echo e1000 > /mnt/etc/modules-load.d/e1000.conf
+
+/etc/resolve.conf
+nameserver 192.168.1.1
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 16
+TASK_NAME: Создание собственной расцветки для sublime-text
+*****************************************************************************************
+TASK_DESC:
+1. Установка Package Control для работы с packages
+    * https://sublime.wbond.net/installation
+2. Ставим AAAPackageDev и в нем создаем новый Syntax definition(F7 или Ctrl+B для компиляции)
+    * https://bitbucket.org/guillermooo/aaapackagedev
+3. Создаем синтаксический файл по примеру, но помним, что в YAML формате
+    * http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
+    * http://www.yaml.org/spec/1.2/spec.html
+4. Именя для подсветки берем с туториала по textmate
+    * https://manual.macromates.com/en/language_grammars#naming_conventions
+5. Regexp по стилю Oniguruma
+    * http://www.geocities.jp/kosako3/oniguruma/doc/RE.txt
+6. Пример файла подсветки синтаксичеса:
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: AI Text Syntax
+scopeName: source.ai
+fileTypes: [ai]
+uuid: ec196564-69da-430f-aae4-20abd4b92e14
+
+patterns:
+- match: ^(TASK_ID:|TASK_NAME:|TASK_DESC:|TASK_DONE:|TASK_END)(.*)$
+  name: keyword.source.ai
+  captures:
+    '2':
+      name: comment.ai
+  comment: keywords
+- match: ^\s*\d+\.\d*\s+
+  name: constant.numeric.ai
+  comment: lists
+- match: ^\s*\*+
+  name: comment.ai
+  comment: lists
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 17
+TASK_NAME: Framwork vs CMS
+*****************************************************************************************
+TASK_DESC:
+1. Rails, Django, Spring - Framwork
+   Drupal, Joomla, Wordpress - CMS
+2. CMS
+     * можно пользоваться без знания программирования
+     * набор готовых модулей
+   Framwork
+     * больше программировать, чем использовать
+     * практически с нуля все делается
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 18
+TASK_NAME: haml2html
+*****************************************************************************************
+TASK_DESC:
+1. добавить в Gemfile 'html2haml' и 'haml' и 'haml-rails'
+2. после запуска rails g scaffold необходимо запустить в корне сайта команду
+   * find . -name \*.erb -print | sed 'p;s/.erb$/.haml/' | xargs -n2 html2haml
+   она перелопатит рекурсивно все .erb файлы и создаст рядом .haml
+   ИЛИ
+   * for file in $(find . -type f -name \*.html.erb); do
+       html2haml -e ${file} "$(dirname ${file})/$(basename ${file}.erb).haml";
+     done
+3. удалить все *.erb
+   * find ./ -name *erb | while read line; do rm $line; done
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 18
+TASK_NAME: HAML tips
+*****************************************************************************************
+TASK_DESC:
+1. %h1 Listing posts
+2. %td= link_to 'Edit',edit_post_path(post) или %li= msg
+3. %br/
+4. - @posts.each do |post|
+5. #error_explanation
+6. .field
+7. %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 19
+TASK_NAME: File upload in Rails
+*****************************************************************************************
+TASK_DESC:
+
+* https://github.com/carrierwaveuploader/carrierwave
+* https://github.com/thoughtbot/paperclip
+
+* actionpack/lib/action_dispatch/http/upload.rb
+      Class ActionDispatch::Http::UploadedFile < Object
+
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 0
+TASK_NAME: Шаблон
+*****************************************************************************************
+TASK_DESC:
+    before_filter - это алиас before_action
+    skip_before_action == skip_before_filter
+
+    https://github.com/rails/rails/blob/master/actionpack/lib/abstract_controller/callbacks.rb
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 0
+TASK_NAME: Email, Padrino
+*****************************************************************************************
+TASK_DESC:
+https://workaround.org/ispmail/squeeze/big-picture
+http://www.highteck.net/EN/Application/Application_Layer_Functionality_and_Protocols.html
+http://www.linuxlinks.com/article/20080721142836801/Email.html
+http://www.tekguard.com/Content/Software/Tutorials/EMailTutorial_P2.htm
+http://www.howtoforge.com/arch-linux-mailserver-with-postfix-and-dovecot
+https://wiki.archlinux.org/index.php/Postfix
+https://github.com/mikel/mail
+https://workaround.org/blog
+http://www.padrinorb.com/
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 0
+TASK_NAME: Rails
+*****************************************************************************************
+TASK_DESC:
+
+helpers - это модули, содержащие инстанс-методы.
+
+При рендеренге view они загружаются(миксуются) все сразу В АЛФАВИТНОМ ПОРЯДКЕ.
+
+Поэтому если был определен инстанс-метод с одинаковым методом в разных helpers, то загружаемые последними перезаписывают предыдущие методы.
+
+Self для инстанс-методов из helpers(они сами называются хелперами) является некий #<#<Class:0xad60768>:0xad6ef0c>, наследник от <Class:0xad60768>, который наследник от ActionView::Base
+
+для методом контроллера self - это #<C2Controller:0xad54fd0>.
+
+Даже если через include миксить хелперы в контроллеры, то для этих методом self - это #<C2Controller:0xad54fd0>.
+
+
+TODO: @variable доступны везде и в контроллере, и в хелперах, и во вьюхах
+TODO: Модели можно вызывать из хелперов как User, а контроллеры или еще что-нибудь?
+TODO: классы вообще доступны для вызова друг из друга?
+
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 0
+TASK_NAME: настройка confirmable в Devise
+*****************************************************************************************
+TASK_DESC:
+* помимо прописывания миграции для получения в бд параметров confirmation_token, confirmed_at, confirmation_sent_at
+class AddConfirmableFieldsToUsers < ActiveRecord::Migration
+    def change
+        add_column :users, :confirmation_token, :string
+        add_column :users, :confirmed_at, :datetime
+        add_column :users, :confirmation_sent_at, :datetime
+    end
+end
+* нужно еще поставить config.reconfirmable в false в initializers/devise.rb, чтобы не было отсутствия параметра unconfirmable_message в бд
+* и нужно настроить сервер, который будет получать почту
+* можно через gmail.com
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:              "smtp.gmail.com",
+      port:                 587,
+      authentication:       "plain",
+      user_name:            "izotovalexander@gmail.com",
+      password:             "[FILTERED]",
+      enable_starttls_auto: true
+  }
+  но тогда нужно выставить еще config.mailer_sender = 'izotovalexander@gmail.com' в devise.rb, а то если не совпадает, то сам сервер не принимает, похоже
+* или поставить gem mailcatcher, который просто висит на 1025 порту и все отлавливает, типо получил и отошлю, но не отсылает. С него можно активировать почту
+  Для него нужно настроить
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings   = {address: "localhost", port: 1025}
+  в браузере localhost:1080 показывает интерфейс и полученные письма
+
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID:
+TASK_NAME: ковертируем из m4b в mp3
+*****************************************************************************************
+TASK_DESC:
+
+faad --stdio 01BC01.m4b | lame -b 128 - 01BC01.mp3
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID: 0
+TASK_NAME: rvm
+*****************************************************************************************
+TASK_DESC:
+
+rvm current #=> какой gemset сейчас используется
+rvm gemset list #=> список всех гемсетов
+rvm use ruby-2.0.0-p481@rails3.2.16 --create #=> создать
+rvm use ruby-2.0.0-p481@rails3.2.16 --default #=> постоянно использовать
+
+gem install rails -v 3.2.16
+
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+TASK_ID:
+TASK_NAME: valid rspec + capybara
+*****************************************************************************************
+TASK_DESC:
+
+group :development, :test do
+  gem 'rspec-rails', '2.13.1'
+  gem 'minitest'
+end
+
+group :test do
+  gem 'capybara', '2.1.0'
+end
+
+для этой версии проходит и
+feature 'Creating Projects' как describe
+  scenario "can create a project"  как it
+TASK_END
+*****************************************************************************************
+*****************************************************************************************
+разбивка по модулям - модули подсасывают функции из дригих файлов?
