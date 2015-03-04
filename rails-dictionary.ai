@@ -31,6 +31,73 @@
 - ПИСЬМО обратной связи, хранится на сервере, в текстовом варианте
 = или отсылать письмо мне через gmail
 
+          Prefix Verb URI Pattern                               Controller#Action
+  dictionary_all GET  /dictionary/all(.:format)                 dictionary#index
+      dictionary GET  /dictionary/:letter(.:format)             dictionary#letter
+  part_of_speech GET  /part_of_speech/:part_of_speech(.:format) dictionary#part_of_speech
+     lessons_all GET  /lessons/all(.:format)                    lessons#all
+          lesson GET  /lessons/:number(.:format)                lessons#number
+translate_me_all GET  /translate_me/all(.:format)               translate_me_game#all
+    translate_me GET  /translate_me/:lesson_number(.:format)    translate_me_game#translate
+
+/category/:name/
+
+//////////////////////////////////////////////////
+Category
+- name : first 600 words, second 600 words
+- Lessons
+- Entities (through Lessons)
+
+Lesson
+- Entities
+- number
+
+Entity
+- word
+- translation
+- sentence
+//////////////////////////////////////////////////
+Letter
+- Entities
+- name
+
+Letters для Category - Letter.where(category)
+//////////////////////////////////////////////////
+PartOfSpeech
+- Entities
+- name
+- acronym
+
+PartOfSpeech для Category - PartOfSpeech.where(category)
+//////////////////////////////////////////////////
+Dictionary - controller - для категории
+Tranlate Me - controller - для урока
+
+All Categories | Dictionary | Lessons | Tranlate Me
+First 600 Words
+Second 600 Words
+
+All Categories | Dictionary | Lessons | Tranlate Me
+All Categories > Dictionary
+All Categories > Lessons
+All Categories > Tranlate Me
+
+First 600 Words > Lesson 1
+
+All Categories | Dictionary | Lessons | Tranlate Me
+First 600 Words > Dictionary
+First 600 Words > Lessons
+First 600 Words > Tranlate Me
+
+
+Categories -> Lessons
+First 600 words, Second 600 words ->
+Random Lesson
+Random Game
+Random word
+//////////////////////////////////////////////////
+
+models tests
 
 СЛОВА = model Entity
 - слово string
@@ -82,7 +149,11 @@ has_many :entities
 Game_En_Ru
 
 
-
+TODO: сделать search по слову, autocomplete
+TODO: игра - показывать слова из урока по одному, а потом все вместе
+TODO: контроллер next lesson | previous lesson
+TODO: нормальное css оформление слов
+TODO: paginate
 
 ИГРЫ-RU-EN
 - УРОК
@@ -172,3 +243,82 @@ http://stackoverflow.com/questions/2868484/rails-using-will-paginate-with-a-comp
 bundle exec rake assets:precompile
 
 * rspec test-овая база заново не создается полностью, но обнуляется и скачет постоянно id 1-2-3-4 и тд. Так и должно быть?
+
+* haml < для удаления пробелов
+
+* features
+As described in https://www.relishapp.com/rspec/rspec-rails/docs/feature-specs/feature-spec, feature corresponds to describe and scenario corresponds to it. So, you can nest instances of feature, but you cannot nest a scenario within a scenario, just as you cannot nest an it within a it.
+
+Nested feature with scenarios is available in Capybara version 2.2.1
+In Gemfile include
+  gem "capybara", "~> 2.2.1"
+and bundle install
+As per official documentation of Capybara
+feature is in fact just an alias for describe ..., :type => :feature, background is an alias for before, scenario for it, and given/*given!* aliases for let/*let!*, respectively.
+Here is the original issue and later it was accepted and merged in version 2.2.1
+
+https://www.relishapp.com/rspec/rspec-rails/docs/feature-specs/feature-spec
+
+* first/find
+You can just use:
+
+first('.item').click_link('Agree')
+or
+
+first('.item > a').click
+(if your default selector is :css)
+
+Code in your question doesn't work as:
+
+within ".item" do
+  first(:link, "Agree").click
+end
+is equivalent to:
+
+find('.item').first(:link, "Agree").click
+Capybara finds several .item's so it raises an exception. I consider this behavior of Capybara 2 very good.
+
+*
+Figured this out. SO, when looking for elements on a page you have a few methods available to you:
+
+first('.some-selector')
+all('.some-selector') #returns an array of course
+find('.some-selector')
+.first and .all are super useful as they let you pick from non unique elements.
+
+HOWEVER .first and .all don't seem to auto-wait for the element to be on the page.
+
+The Fix
+
+The fix then is to always use .find(). .find WILL honour the capybara wait time. Using .find has almost completely fixed my tests (with a few unrelated exceptions).
+
+The gotcha of course is that you have to use more unique selectors as .find MUST only return a single element, otherwise you'll get the infamous Capybara::Ambiguous exception
+
+*
+EDIT (23/01/2014): Nested features are available since version 2.2.1. See here
+
+EDIT (24/07/2013): Nested features will be allowed in Capybara > 2.1.0. See here
+
+You can't. This is what the mantainer of the gem says about it
+
+I guess you could call this a limitation. feature can not be nested. You can use either context or describe instead, but I would suggest not going wild with these, it tends to make tests pretty unreadable.
+In some other cases the convenience of this might be argued but in this specific one you should use scenario instead of the nested feature.
+
+Also if you want to consistent and use the new DSL everywhere, use background instead of before and given instead of let.
+
+*
+# Revert changes to modified files.
+git reset --hard
+
+# Remove all untracked files and directories.
+git clean -fd
+
+* .first_or_create
+
+* remove_index(:users, :name => 'index_users_on_email')
+
+* display:block
+    Displays an element as a block element (like <p>)
+
+  display:inline
+    Default value. Displays an element as an inline element (like <span>)
