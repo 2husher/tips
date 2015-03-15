@@ -322,3 +322,12 @@ git clean -fd
 
   display:inline
     Default value. Displays an element as an inline element (like <span>)
+
+* rspec
+  1. проверить доступность всех страниц по адресам в routes
+  & have_link работает как regex. Ищет вхождение слова в составные линки
+
+TODO: круговая диаграмма - соотношение noun, adjective, verbs и тд
+
+* find(id) не может искать nil
+find_by(id: nil) может обработать nil
