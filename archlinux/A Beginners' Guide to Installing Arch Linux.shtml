@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-us"><head profile="http://www.w3.org/2005/10/profile http://a9.com/-/spec/opensearch/1.1/" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<title>A Beginners' Guide to Installing Arch Linux</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="language" content="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="An easy-to-follow tutorial with detailed instructions and screenshots">
+<meta name="keywords" content="install Arch Linux, how to install Arch, Arch Linux installation, Arch installation tutorial, Arch Linux">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@softpedia"><meta name="twitter:creator" content="@softpedia"><meta name="twitter:url" content="http://news.softpedia.com/news/A-Beginners-Guide-to-Installing-Arch-Linux-352365.shtml"><meta name="twitter:title" content="A Beginners' Guide to Installing Arch Linux"><meta name="twitter:description" content="The following tutorial will teach any computer user how to install the Arch Linux operating system on their personal computer or laptop. Arch Linux,..."><meta name="twitter:image" content="http://news.softpedia.com/images/news2/A-Beginners-Guide-to-Installing-Arch-Linux-2.jpg"><meta property="fb:app_id" content="505430742898262"><meta property="og:type" content="article"><meta property="og:url" content="http://news.softpedia.com/news/A-Beginners-Guide-to-Installing-Arch-Linux-352365.shtml"><meta property="og:title" content="A Beginners' Guide to Installing Arch Linux"><meta property="og:description" content="The following tutorial will teach any computer user how to install the Arch Linux operating system on their personal computer or laptop. Arch Linux,..."><meta property="og:image" content="http://news.softpedia.com/images/news2/A-Beginners-Guide-to-Installing-Arch-Linux-2.jpg"><link href="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/a.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="http://s2.softpedia-static.com/_img/favicon.ico?v=4">	
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.softpedia-static.com/_img/favicon.ico?v=4">
+<link href="https://plus.google.com/101656043016584839551/" rel="publisher">
+<link rel="apple-touch-icon" sizes="57x57" href="http://s1.softpedia-static.com/base_img/touch-icon-57.png"><link rel="apple-touch-icon" sizes="72x72" href="http://s1.softpedia-static.com/base_img/touch-icon-72.png"><link rel="apple-touch-icon" sizes="114x114" href="http://s1.softpedia-static.com/base_img/touch-icon-114.png">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.softpedia.com/a-beginners-guide-to-installing-arch-linux-352365.html"><link href="http://news.softpedia.com/newsRSS/Global-0.xml" rel="alternate" type="application/rss+xml" title="Softpedia News RSS">
+<link rel="search" type="application/opensearchdescription+xml" href="http://news.softpedia.com/osrc.xml" title="Softpedia News Search">
+<script>
+window.google_analytics_uacct = "UA-61277-1";
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-61277-1', 'softpedia.com');
+var dimensionValue = 'Linux'; ga('set', 'dimension1', dimensionValue);
+var dimensionValue2 = 'Marius Nestor'; ga('set', 'dimension2', dimensionValue2);
+ga('send', 'pageview');
+var gats_scrolled=0; 
+setTimeout(function(){if(!gats_scrolled){ gats_scrolled=1; ga('send','event','No-Bounce','Page-Read'); }}, 30000);
+setTimeout(function(){window.addEventListener ? window.addEventListener('scroll', ga_scroll, false) : window.attachEvent('onScroll', ga_scroll)}, 5000);
+function ga_scroll(){ if(!gats_scrolled) { gats_scrolled=1; ga('send','event','No-Bounce','Scrolled'); }}
+</script>
+</head>
+<body id="in" itemscope="" itemtype="http://schema.org/Organization" bgcolor="#FFFFFF">
+<div id="top" align="center">
+	<form style="margin: 36px 0 0 0;" action="/dyn-search.php" method="GET" name="sp_qsearch_form" id="sp_qsearch_form" onsubmit="return qsearch_validate(document.getElementById('qsearch_src'));">
+	<table class="top" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td align="left">
+			<img onclick="bookmark_msg();" style="cursor: pointer;" title="Bookmark this page" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/top_1.gif" border="0" height="17" width="115"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/top_spacer.gif" height="17" width="32"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/top_2.gif" class="padding_right5px" height="17" width="53">
+			<input name="search_term" id="qsearch_src" class="topform" style="width: 100px;" value="Keywords" onfocus="if(this.value == 'Keywords') this.value='';" type="text">
+			<input src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/top_3.gif" border="0" height="17" type="image" width="27">
+			<img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/top_spacer.gif" height="17" width="32"><img onclick="spi__jjmp('aHR0cDovL3d3dy5zb2Z0cGVkaWEuY29tL2R5bi1kb3dubG9hZGJhc2tldC5waHA=')" title="Access your download basket" class="jjmp" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/top_5.gif" border="0" height="17" width="104">
+		</td>
+		<td align="right"><a rel="nofollow" href="http://www.softpedia.com/dyn-account.php"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/top_f.gif" border="0" height="17" width="78"></a></td>
+	</tr>
+	</tbody></table>
+	</form>
+
+	<table border="0" cellpadding="0" cellspacing="0" height="100" width="974">
+	<tbody><tr>
+		<td class="logotable" align="left"><a itemprop="url" href="http://www.softpedia.com/" title="Softpedia"><img itemprop="logo" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/softpedia_logo4a.gif" alt="Softpedia" border="0" height="65" width="209"></a></td>
+		<td style="padding: 0 17px 5px 22px;" align="right"></td>
+	</tr>
+	</tbody></table>
+
+
+	<table border="0" cellpadding="0" cellspacing="0" width="974">
+	<tbody><tr><td class="menutable" align="left"><a href="http://www.softpedia.com/"><img alt="Homepage" title="Go to the Softpedia homepage" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_home_off.gif" class="padding_right5px" border="0" height="35" width="30"></a><a href="http://win.softpedia.com/"><img alt="Windows" title="Visit the Windows section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_windows_off.gif" name="Image1" class="padding_right5px" id="Image1" border="0" height="35" width="101"></a><a href="http://games.softpedia.com/"><img alt="Games" title="Visit the Games section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_games_off.gif" name="Image2" class="padding_right5px" id="Image2" border="0" height="35" width="79"></a><a href="http://drivers.softpedia.com/"><img alt="Drivers" title="Visit the Drivers section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_drivers_off.gif" name="Image3" class="padding_right5px" id="Image3" border="0" height="35" width="91"></a><a href="http://mac.softpedia.com/"><img alt="Mac" title="Visit the Mac section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_mac_off.gif" name="Image4" class="padding_right5px" id="Image4" border="0" height="35" width="61"></a><a href="http://linux.softpedia.com/"><img alt="Linux" title="Visit the Linux section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_linux_off.gif" name="Image5" class="padding_right5px" id="Image5" border="0" height="35" width="72"></a><a href="http://webscripts.softpedia.com/"><img alt="Scripts button" title="Visit the Scripts section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_scripts_off.gif" name="Image8" class="padding_right5px" id="Image8" border="0" height="35" width="89"></a><a href="http://mobile.softpedia.com/"><img alt="Mobile" title="Visit the Mobile section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_mobile_off.gif" name="Image6" class="padding_right5px" id="Image6" border="0" height="35" width="82"></a><a href="http://handheld.softpedia.com/"><img alt="Handheld" title="Visit the Handheld section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_handheld_off.gif" name="Image7" class="padding_right5px" id="Image7" border="0" height="35" width="108"></a><a href="http://news.softpedia.com/"><img alt="News" title="Visit the News section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/m_news_on.gif" name="Image9" id="Image9" border="0" height="35" width="69"></a></td></tr>
+	</tbody></table>
+<table itemscope="" itemtype="http://schema.org/NewsArticle" border="0" cellpadding="0" cellspacing="0" width="974">
+<tbody><tr>
+	<td>
+		<table border="0" cellpadding="0" cellspacing="0" width="974">
+		<tbody><tr>
+			<td class="back_news_l" height="463" valign="top" width="12"></td>
+			<td align="left" valign="top" width="950"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/back_news_t.gif" height="9" width="950"><br>
+			<table border="0" cellpadding="0" cellspacing="0" width="950">
+			<tbody><tr>
+				<td class="columnheadings" align="left" bgcolor="#90322B" valign="top" width="190"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+	<td class="column_news" bgcolor="#9A3C35">
+		<h5>NEWS CATEGORIES:<br><br></h5>
+		<ul id="news_cat">
+		<li><a href="http://news.softpedia.com/newsTag/Gamescom+2014" title="Read all about what's going on at this year's Gamescom expo!" style="color: #FFAAFF;">GAMESCOM 2014</a></li>
+		<li><a rel="nofollow" href="http://news.softpedia.com/newsTag/NSA" title="Edward Snowden: whistleblower, traitor, hero?" style="color: #99BBFF;">NSA &amp; Edward Snowden</a></li>
+		<li><a href="http://news.softpedia.com/" title="See all latest news">Latest News</a></li>
+		<li><a href="http://news.softpedia.com/cat/Oddiverse/" title="Oddiverse">Oddiverse</a></li><li><a href="http://news.softpedia.com/cat/Laptops-Tablets/" title="Laptops &amp; Tablets">Laptops &amp; Tablets</a></li><li><a href="http://news.softpedia.com/cat/3D-Printing/" title="3D Printing">NEW! 3D Printing</a></li><li><a href="http://news.softpedia.com/cat/Photo/" title="Photo">Photo</a></li><li><a href="http://news.softpedia.com/cat/Wearable-Tech/" title="Wearable Tech">NEW! Wearable Tech</a></li><li><a href="http://news.softpedia.com/cat/Games/" title="Games">Games</a></li><li><a href="http://news.softpedia.com/cat/Microsoft/" title="Microsoft">Microsoft</a></li><li><a href="http://news.softpedia.com/cat/Apple/" title="Apple">Apple</a></li><li><a href="http://news.softpedia.com/cat/Telecoms/" title="Telecoms">Telecoms</a></li><li><a href="http://news.softpedia.com/cat/Technology/" title="Technology &amp; Gadgets">Technology &amp; Gadgets</a></li><li><a href="http://news.softpedia.com/cat/Reviews/" title="Reviews">Reviews</a></li><li><a href="http://news.softpedia.com/cat/Linux/" title="Linux" class="active_category">Linux</a></li><li><a href="http://news.softpedia.com/cat/Life-and-Style/" title="Life and Style">Life and Style</a></li><li><a href="http://news.softpedia.com/cat/Webmaster/" title="Webmaster">Webmaster</a></li><li><a href="http://news.softpedia.com/cat/Security/" title="Security">Security</a></li><li><a href="http://news.softpedia.com/cat/Editorials/" title="Editorials">Editorials</a></li><li><a href="http://news.softpedia.com/cat/Interviews/" title="Interviews">Interviews</a></li><li><a href="http://news.softpedia.com/cat/Science/" title="Science">Science</a></li><li><a href="http://news.softpedia.com/cat/Green/" title="Green" style="color:#66CC66;">Green</a></li>		</ul>
+		<br><br>
+		<a rel="nofollow" title="News archive" href="http://news.softpedia.com/newsArchive"><strong>NEWS ARCHIVE</strong> &gt;&gt;</a><br>	
+		<a rel="nofollow" title="Softpedia reviews" href="http://www.softpedia.com/reviews/"><strong>SOFTPEDIA REVIEWS</strong> &gt;&gt;</a><br>
+		<a rel="nofollow" title="Softpedia team" href="http://www.softpedia.com/editors/"><strong>MEET THE EDITORS</strong> &gt;&gt;</a><br>		
+	</td>
+</tr>
+<tr>
+	<td class="column_news_cell">
+		<h5 style="font-size: 13px;">TRENDING TODAY</h5>
+		<ul id="news_cat2" style="list-style: none; margin: 0 0 0 0; padding: 5px 0 0 0; width: 165px;"><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/Jennifer-Aniston-Explodes-at-Justin-Theroux-for-Getting-Too-Cozy-with-Co-Star-Liv-Tyler-456137.shtml" title="Jennifer Aniston “Explodes” at Justin Theroux for Getting Too Cozy with Co-Star Liv Tyler">Jennifer Aniston “Explodes” at Justin Theroux for Getting Too Cozy with Co-Star Liv Tyler</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/Linus-Torvalds-Started-a-Revolution-on-August-25-1991-Happy-Birthday-Linux-456212.shtml" title="Linus Torvalds Started a Revolution on August 25, 1991. Happy Birthday, Linux!">Linus Torvalds Started a Revolution on August 25, 1991. Happy Birthday, Linux!</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/VMAs-2014-Taylor-Swift-Performs-Shake-It-Off-Live-for-the-First-Time-Video-456174.shtml" title="VMAs 2014: Taylor Swift Performs “Shake It Off” Live for the First Time – Video">VMAs 2014: Taylor Swift Performs “Shake It Off” Live for the First Time – Video</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/Big-Car-Manufacturers-Delay-CarPlay-Integration-to-2015-456128.shtml" title="Big Car Manufacturers Delay CarPlay Integration to 2015">Big Car Manufacturers Delay CarPlay Integration to 2015</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/VMAs-2014-Nicki-Minaj-Has-On-Stage-Wardrobe-Malfunction-Video-456167.shtml" title="VMAs 2014: Nicki Minaj Has On-Stage Wardrobe Malfunction – Video">VMAs 2014: Nicki Minaj Has On-Stage Wardrobe Malfunction – Video</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/Linux-Mint-17-1-to-Feature-a-Much-Better-Update-Manager-456155.shtml" title="Linux Mint 17.1 to Feature a Much Better Update Manager">Linux Mint 17.1 to Feature a Much Better Update Manager</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/Sony-Said-No-Personal-Information-Was-Accessed-During-DDoS-Attack-on-PSN-456165.shtml" title="Sony Said No Personal Information Was Accessed During DDoS Attack on PSN">Sony Said No Personal Information Was Accessed During DDoS Attack on PSN</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/Ubuntu-14-10-Utopic-Unicorn-Hits-Feature-Freeze-456153.shtml" title="Ubuntu 14.10 (Utopic Unicorn) Hits Feature Freeze">Ubuntu 14.10 (Utopic Unicorn) Hits Feature Freeze</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/VMAs-2014-Amber-Rose-Wears-Nothing-but-Chains-on-the-Red-Carpet-Gallery-456237.shtml" title="VMAs 2014: Amber Rose Wears Nothing but Chains on the Red Carpet – Gallery">VMAs 2014: Amber Rose Wears Nothing but Chains on the Red Carpet – Gallery</a></li><li style="list-style: none; position: relative; margin-top: 5px;"><b>·</b> <a rel="nofollow" href="http://news.softpedia.com/news/VMAs-2014-Ariana-Grande-Nicki-Minaj-Jessie-J-Kick-Off-the-Show-with-Performance-Video-456166.shtml" title="VMAs 2014: Ariana Grande, Nicki Minaj, Jessie J Kick Off the Show with Performance – Video">VMAs 2014: Ariana Grande, Nicki Minaj, Jessie J Kick Off the Show with Performance – Video</a></li></ul>
+	</td>
+</tr>
+</tbody></table></td>
+				<td bgcolor="#FFFFFF" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="760">
+					<tbody><tr>
+						<td class="pagehead1" bgcolor="#9A3C35">
+							<table class="pagehead_margin_9px" border="0" cellpadding="0" cellspacing="0" width="733">
+							<tbody><tr valign="top"><td><a href="http://www.softpedia.com/">Home</a> &gt; <a title="Softpedia News" href="http://news.softpedia.com/">News</a> &gt; <a title="Linux" href="http://news.softpedia.com/cat/Linux/">Linux</a> &gt; <a title="Other Tips, Tricks and Tutorials" href="http://news.softpedia.com/cat/Linux/Other-Tips--Tricks-and-Tutorials/">Other Tips, Tricks and Tutorials</a></td></tr>
+							</tbody></table>
+						</td>
+					</tr>
+					<tr>
+						<td class="pagehead3" valign="top">
+							<p class="date_author" style="letter-spacing: -1px; font-size: 12px; margin: 0; padding: 0;"><nobr><span datetime="2013-05-29T13:50:00+00:00" itemprop="datePublished">May 29th, 2013, 13:50 GMT</span> · By <span><a itemprop="author" rel="author" href="http://news.softpedia.com/editors/browse/marius-nestor">Marius Nestor</a></span></nobr></p>
+							<table border="0" cellpadding="0" cellspacing="0" width="725">
+							<tbody><tr><td class="contentheadings" valign="top"><h1 itemprop="headline" id="htitle" style="line-height: 34px; font-size: 34px; letter-spacing: -2px; font-weight: bold; margin: 3px 0 5px 0;">A Beginners' Guide to Installing Arch Linux</h1></td></tr>
+							<tr><td style="padding: 5px 0 10px 0;"><script async="" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7668878252976156" data-ad-slot="9803870113"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</td></tr>
+							</tbody></table>
+						</td>
+					</tr>
+					<tr>
+						<td class="contentpadding" valign="top">
+							<table style="margin-top:5px;" border="0" cellpadding="0" cellspacing="0" width="727">
+							<tbody><tr><td colspan="2" class="contentheadings sharebox">
+							    <p>SHARE: </p>
+								<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fnews.softpedia.com%2Fnews%2FA-Beginners-Guide-to-Installing-Arch-Linux-352365.shtml&amp;t=A+Beginners%26%23039%3B+Guide+to+Installing+Arch+Linux','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); return false;" rel="nofollow" title="Share this page on Facebook" class="fb">share</a>
+								<a href="https://plus.google.com/share?url=http://news.softpedia.com/news/A-Beginners-Guide-to-Installing-Arch-Linux-352365.shtml" rel="nofollow" target="_blank" title="Share this page on Google Plus" class="gplus" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); return false;">share</a>
+								<a href="http://twitter.com/intent/tweet?related=softpedia&amp;via=softpedia&amp;text=A+Beginners%27+Guide+to+Installing+Arch+Linux&amp;url=http%3A%2F%2Fnews.softpedia.com%2Fnews%2FA-Beginners-Guide-to-Installing-Arch-Linux-352365.shtml" target="_blank" rel="nofollow" title="Share this page on Twitter" class="twitter">tweet</a>
+																<div class="sizebox"><p>Adjust text size: <img class="jjmp" onclick="ttsz_dec();" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/news_textminus2.png" border="0" height="14" width="16"> <img class="jjmp" onclick="ttsz_inc();" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/news_textplus2.png" border="0" height="14" width="16"></p></div>
+							</td></tr>
+							<tr><td colspan="2"></td></tr>
+							<tr>
+								<td colspan="2" class="contentheadings" style="padding-top: 15px; font-size: 12px; line-height: 16px; color: #222222; text-align: left;" id="article_container" valign="top">
+																	<div style="width: 340px; margin: 0 0 15px 20px; float: right; padding: 0;" align="right">									
+									<div style="width: 340px; margin: 0 0 5px 0; xmax-height: 180px; overflow: hidden; border: 2px solid #DDEEFF;"><a href="http://i1-news.softpedia-static.com/images/news2/A-Beginners-Guide-to-Installing-Arch-Linux-2.jpg" class="s_gallery" id="spgal_0" target="_blank" title="Arch Linux with GNOME 3.8"><img itemprop="image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/A-Beginners-Guide-to-Installing-Arch-Linux-2.jpg" style="cursor: pointer;" alt="Arch Linux with GNOME 3.8" title="Arch Linux with GNOME 3.8" data-title="Arch Linux with GNOME 3.8" data-description="Softpedia" data-gidx="0" width="340"></a></div><i class="fl glyph">⌖</i><i title="Arch Linux with GNOME 3.8" class="picdesc ellip"> - Arch Linux with GNOME 3.8</i><br><br><div style="margin: 0;"><script async="" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-7668878252976156" data-ad-slot="2457547993"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>									
+									</div>
+									<span id="intelliTxt">
+									<div class="KonaBody" itemprop="articleBody">
+										<!-- google_ad_section_start -->
+										<div style="font-size: 14px; line-height: 19px;"><strong>The 
+following tutorial will teach any computer user how to install the Arch 
+Linux operating system on their personal computer or laptop. </strong></div> <br>
+ Arch Linux, the ultimate frontier! Well, the funny thing is that Arch 
+Linux has become some sort of a scarecrow for many Linux beginners, 
+especially for those who were “trained” into Ubuntu or other “Linux 
+distribution for the average Joe or Jane.” And that’s because of the 
+kind of painful installation process, which we’ll try to simplify in 
+this tutorial.<br> <br> <div class="article_ad" style="margin: 10px 0 10px 15px;" align="center">
+</div>However, the truth is that once you install Arch Linux, you’ll get
+ a lightweight and flexible (do-it-yourself) Linux distribution, 
+designed as a Rolling Release, which means that you won’t have to 
+upgrade every 6 months to a different release like some popular Linux 
+OSes do these days. You install once and you update you system on a 
+regular basis.<br> <br> Arch Linux follows the KISS principle: Keep it 
+simple, stupid! It will keep your system up-to-date and on the bleeding 
+edge, so you won’t have to wait six months for a new kernel.<br> <br> 
+What do I need to get started? The wonderful people behind the Arch 
+Linux operating system provide a monthly updated ISO image, just in case
+ any new Linux user wants to try the distribution. <a target="_blank" href="http://linux.softpedia.com/get/System/Operating-Systems/Linux-Distributions/Arch-Linux-864.shtml"><strong>Get the latest version right now from Softpedia</strong></a>.<br> <br>
+ But, before anything else, you need to partition your hard drive for 
+Arch Linux, so you won’t have to do it manually from within the Live CD.
+ For this, we will use the Parted Magic Live CD.<br> <br> At this moment, you should write both ISO images on two different USB flash drives by following our very popular and useful “<a target="_blank" href="http://news.softpedia.com/news/How-to-Run-Linux-from-an-USB-Flash-Drive-93316.shtml"><strong>How to Run Linux from an USB Flash Drive</strong></a>” tutorial. In case you don’t have two USB sticks, write the <a target="_blank" href="http://linux.softpedia.com/get/System/Operating-Systems/Linux-Distributions/Parted-Magic-21659.shtml"><strong>Parted Magic</strong></a> ISO first and overwrite it with the Arch Linux ISO image when you’re done partitioning the hard drive.<br> <br>
+ So, insert the Parted Magic USB stick in a USB port, and reboot the 
+computer in order to boot from the flash drive. Hit the F8, F11 or F12 
+key (depending on your BIOS) until the boot menu appears, in order to 
+select the USB flash drive as the boot device.<br> <br> <span style="color: rgb(0, 0, 255);"><span style="font-size: medium;"><strong>Partition your hard drive:</strong></span></span><br> <br> Once the Parted Magic CD was loaded into memory, start the Partition Editor tool from the desktop...<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_001.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_001.png" border="0"></a></td></tr></tbody></table><br> Go to Device -&gt;&nbsp;Create Partition Table and click the "Apply" button on the warning dialog...<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_002.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_002.png" border="0"></a></td></tr></tbody></table><br>
+ Right click again on the unallocated entry and in the new window, type 
+the size of your root partition in the "New size (MiB)" field (we 
+recommend around 20 GB) and select the "ext4" option from the 
+"Filesystem" drop down list. Type <strong>/</strong> in the Label field. Click the OK button and, in a few seconds, you'll notice a "/" line with the specified size.<br> <br>
+ Now, right click on the unallocated entry and choose "New" to create 
+the  partitions. In the new window, type 2048 in the "New size (MiB)" 
+field  and select the "swap area" option from the "Filesystem" drop down
+ list.  Click the OK button and, in a few seconds, you'll notice a 
+"swap" line  with the specified size.<br> <br> Once again, right click 
+on the unallocated entry, type the size of your home partition in the 
+"New size (MiB)" field (usually the rest of the hard drive) and select 
+the "ext4" option from the "Filesystem" drop down list. Type <strong>/home</strong> in the Label field. Click the OK button and, in a few seconds, you'll notice a "/home" line with the specified size.<br> <br>
+ Click the "Apply" button to make the changes. Click Apply again on the 
+warning dialog and wait for the partitioning process to finish. Close 
+the dialog.<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_003.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_003.png" border="0"></a></td></tr></tbody></table><br>
+ Now that your hard drive has been partitioned, reboot your computer and
+ eject the USB drive. As we said before, use the second USB stick or 
+overwrite this one with the Arch Linux ISO image. Do the same as above 
+in order to boot from the flash drive.<br> <br> Wait for the image to load...<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_004.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_004.png" border="0"></a></td></tr></tbody></table><br>
+ ...and select the right architecture for you (64-bit for newer systems 
+or 32-bit for old ones). Wait for the system to load, it will take a few
+ seconds, and all you’ll see now is this...<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_005.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_005.png" border="0"></a></td></tr></tbody></table><br> <span style="color: rgb(128, 128, 128);"><strong>Editor’s note:</strong><em><strong> </strong>For
+ those of you who don’t know yet, /dev/sda is your first hard drive, in 
+case you have two or more. To see on which drive you want to install, 
+use the fdisk -l command, which will list all your drives, including the
+ USB disk with Arch Linux. Therefore, if you have a single hard drive in
+ your machine, which is recommended for most computers, use “sda” from 
+now on during the entire installation process. If not, use “sdb” or 
+“sdc,” depending on your configuration.</em></span><span style="color: rgb(0, 255, 0);"><br> </span><br>
+ Before we start, let’s execute a simple command, which will tell us if 
+the hard drive has been partitioned correctly or not and if it is the 
+correct one:<br> <br> <em>lsblk /dev/sda</em><br> <br> ...and the output is:<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_006.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_006.png" border="0"></a></td></tr></tbody></table><br> Now, let’s activate the swap partition with the following command:<br> <br> <em>swapon /dev/sda2</em><br> <br> Let’s mount the partitions:<br> <em><br> mount /dev/sda1 /mnt<br> mkdir /mnt/home<br> mount /dev/sda3 /mnt/home</em><br> <br> Run the following command to install the base system for your future Arch Linux installation:<br> <br> <em>pacstrap /mnt base base-devel</em><br> <br>
+ Hit Enter and wait for the download/installation process to finish, as 
+it will take a few minutes, depending on your Internet speed. What will 
+happen now? Some packages will be downloaded and installed. You can see 
+the progress in real time. When everything is done, run the following 
+command to configure system configuration file, named fstab, which lists
+ all your partitions:<br> <br> <em>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</em><br> <br> And now, it’s time to configure your Arch Linux system. Let’s get in, shall we? Use the following command:<br> <br> <em>arch-chroot /mnt</em><br> <br> So, we’re in, let’s set up the local language with the following command:<br> <br> <em>nano /etc/locale.gen</em><br> <br>
+ Scroll the file until you find your language and uncomment the # in 
+front of it. For us it was en_US.UTF-8 UTF-8, which means English United
+ States, Unicode encoding. Save the file using the CTRL+O keyboard 
+shortcut. Exit it using the CTRL+X keyboard shortcut.<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_007.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_007.png" border="0"></a></td></tr></tbody></table><br> Run the following three commands, one by one, hitting enter after each one:<br> <br> <em>locale-gen<br> echo LANG=en_US.UTF-8 &gt; /etc/locale.conf<br> export LANG=en_US.UTF-8</em><br> <br> <span style="color: rgb(255, 0, 0);"><strong>WARNING:</strong></span> <span style="color: rgb(255, 0, 0);"><em>Replace en_US.UTF-8 from the above commands with your selected locale!</em></span><br> <br> Now we need to specify the timezone, so run the following command:<br> <br> <em>ln -s /usr/share/zoneinfo/<strong>Zone</strong>/<strong>SubZone</strong> /etc/localtime</em><br> <br> <strong>Note:</strong> Replace <strong>Zone</strong> and <strong>SubZone</strong> with your country and city. Example: <em>ln -s /usr/share/zoneinfo/Romania/Bucharest /etc/localtime.</em><br> <br> Now let’s set the clock depending on the country and city selected above:<br> <br> <em>hwclock --systohc --utc</em><br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_008.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_008.png" border="0"></a></td></tr></tbody></table><br> <strong>ONLY for 64-bit systems:</strong> You need to activate the “multilib” repository. Execute the following command:<br> <br> <em>nano /etc/pacman.conf</em><br> <br> ...and delete the # in front of the following lines:<br> <br> <em>[multilib]<br> Include = /etc/pacman.d/mirrorlist</em><br> <br> You know the drill, save the file using the CTRL+O keyboard shortcut. Exit it using the CTRL+X keyboard shortcut.<br> <br> Let’s update the software repositories:<br> <br> <em>pacman -Sy</em><br> <br> <span style="color: rgb(128, 128, 128);"><strong>Editor’s note:</strong> <em>Please
+ meet pacman, your best friend from now on. pacman will help you install
+ or remove packages from your system, as well as keep your entire 
+machine up to date.</em></span><br> <br> Let’s create a password for the Administrator (also known as root):<br> <br> <em>passwd</em><br> <br> Type the password and hit Enter, twice.<br> <br> Let’s add a user now:<br> <br> <em>useradd -m -g users -G wheel,storage,power -s /bin/bash softpedia</em><br> <br> ...and set a password for it:<br> <br> <em>passwd softpedia</em><br> <br> Type the password and hit Enter, twice.<br> <br> Let’s install the gate keeper... just kidding, only sudo, with the following command:<br> <br> <em>pacman -S sudo</em><br> <br> And now, let’s give some rights to your newly created user. Execute the following command:<br> <br> <em>EDITOR=nano visudo</em><br> <br> Scroll down until you find the <strong>%wheel ALL=(ALL) ALL</strong>
+ line. Delete the # in front of it. Save the file using the CTRL+O 
+keyboard shortcut. Exit it using the CTRL+X keyboard shortcut.<br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_009.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_009.png" border="0"></a></td></tr></tbody></table><br> Let’s install some more useful packages...<br> <br> <em>pacman -S bash-completion grub-bios os-prober</em><br> <br> ...and setup the boot loader...<br> <em><br> grub-install --target=i386-pc --recheck /dev/sda<br> cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo<br> </em><em>grub-mkconfig -o /boot/grub/grub.cfg<br> </em><br> <strong>Note:</strong> Remember to use /dev/sda or /dev/sdb in the above command, depending on your hard drive!<br> <br> That’s it, let’s exit the system and eject the mounted partitions:<br> <br> <em>exit<br> umount /mnt/home<br> umount /mnt<br> reboot</em><br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_010.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_010.png" border="0"></a></td></tr></tbody></table><br>
+ When you get back, enter your username and password created during the 
+installation. Now we need to configure the Internet, so run the 
+following command:<br> <br> <em>ip link</em><br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_011.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_011.png" border="0"></a></td></tr></tbody></table><br> Just like in the screenshot above, you’ll see the name of your Ethernet connection, so use it in the following commands:<br> <br> <em>sudo systemctl enable dhcpcd@<interface>.service<br> sudo systemctl start dhcpcd@<interface>.service</interface></interface></em><br> <br> <strong>Note:</strong> Replace <interface> in the above commands with the name of your interface. For example: <em>sudo systemctl enable dhcpcd@enp2s0.service / sudo systemctl start dhcpcd@enp2s0.service</em><br> <br> Let’s install the X11 packages and the video drivers:<br> <br> <em>sudo pacman -S xorg-server xorg-xinit xorg-server-utils mesa xf86-input-synaptics</em><br> <br> <strong>Nvidia users</strong> should use the following command:<br> <br> <em>sudo pacman -S nvidia (for 32-bit users)<br> sudo pacman -S nvidia lib32-nvidia-utils (for 64-bit users)</em><br> <br> <strong>ATI users</strong> should use the following command:<br> <br> <em>sudo pacman -S catalyst-dkms (for 32-bit users)<br> sudo pacman -S catalyst-dkms lib32-catalyst-utils (for 64-bit users)</em><br> <br> <strong>Intel users</strong> should use the following command:<br> <br> <em>sudo pacman -S xf86-video-intel</em><br> <br> And now, it’s time to install a desktop environment. Use the following command for <strong>GNOME</strong>:<br> <br> <em>sudo pacman -S gnome</em><br> <br> ...or the following command for <strong>KDE</strong>:<br> <br> <em>sudo pacman -S kde</em><br> <br>
+ This will download a lot of packages and it will take some time. When 
+everything is done, run the following commands to start the desktop 
+environment:<br> <br> <strong>FOR GNOME USERS:</strong><br> <br> <em>sudo systemctl enable gdm.service<br> sudo systemctl start gdm.service</em><br> <br> <strong>FOR KDE USERS:</strong><br> <br> <em>sudo systemctl enable kdm.service<br> sudo systemctl start kdm.service</em><br> <br> <table align="center"><tbody><tr><td valign="top"><a title="Click to view large image" class="s_gallery" href="http://i1-news.softpedia-static.com/images/extra/LINUX/large/archlinuxinstallation-large_012.jpg" target="_blank"><img alt="Review image" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/archlinuxinstallation-small_012.png" border="0"></a></td></tr></tbody></table><br>
+ That’s it! You should now see your favorite desktop environment. Have 
+fun using Arch Linux, and don’t forget to comment below in case you run 
+into trouble with the installation.<br> <br> Also, don't hesitate to read our "<a target="_blank" href="http://news.softpedia.com/news/How-to-Install-Third-Party-Apps-in-Arch-Linux-356894.shtml"><strong>How to Install Third-Party Apps in Arch Linux</strong></a>" tutorial.<br><div style="margin: 10px 0 0 0;"><a href="https://twitter.com/mariusnestor" class="twitter-follow-button" data-show-screen-name="true" data-show-count="true" data-lang="en">Follow @mariusnestor</a></div>										<!-- google_ad_section_end -->
+										
+									</interface></div>
+									</span>
+								</td>								
+							</tr>
+							<tr><td colspan="2">
+																<div style="margin: 10px 0 5px 0; height: 20px;">
+									<b style="letter-spacing: -1px; float: left; clear: left; color: #444444; margin: 3px 10px 0 0;">FILED UNDER:</b> 
+									<a title="Read more stories about &quot;install Arch Linux&quot;" href="http://news.softpedia.com/newsTag/install+Arch+Linux"><div class="tags_badge">install Arch Linux</div></a> <a title="Read more stories about &quot;how to install Arch&quot;" href="http://news.softpedia.com/newsTag/how+to+install+Arch"><div class="tags_badge">how to install Arch</div></a> <a title="Read more stories about &quot;Arch Linux installation&quot;" href="http://news.softpedia.com/newsTag/Arch+Linux+installation"><div class="tags_badge">Arch Linux installation</div></a> <a title="Read more stories about &quot;Arch installation tutorial&quot;" href="http://news.softpedia.com/newsTag/Arch+installation+tutorial"><div class="tags_badge">Arch installation tutorial</div></a> <a title="Read more stories about &quot;Arch Linux&quot;" href="http://news.softpedia.com/newsTag/Arch+Linux"><div class="tags_badge">Arch Linux</div></a> 								</div>
+															</td></tr>							
+							<tr><td colspan="2" class="contentheadings"></td></tr>
+							</tbody></table>
+							
+							
+							<img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/contentspacer_002.gif" class="contentspacer5" height="1" width="727">	
+							<br><br><table xclass="news_index_hot_inv" id="dhead" border="0" cellpadding="0" cellspacing="0" width="727">
+							<tbody><tr>
+								<td rowspan="2" valign="top" width="305"><script async="" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-7668878252976156" data-ad-slot="9664117393"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</td>								
+								<td style="padding: 0 10px 10px 20px;" colspan="2" align="left" valign="top">
+									<textarea id="commlead" style="float: left; height: 185px; font-size: 18px; font-weight: bold; font-family: 'Times New Roman', serif; width: 380px; border: 1px  inset #CCCCCC; background-color: #F7F8FA; background-image:url(http://s1.softpedia-static.com/base_img/news_comboxbg.png); padding: 2px 5px; color: #444444;" onclick="if(this.value == 'Share your thoughts on this story...') this.value='';">Share your thoughts on this story...</textarea>
+									<div id="commdiv" style="z-index: 100; display: none; position: absolute; top: 100px; left: 100px; background: url(http://s1.softpedia-static.com/base_img/addcommentpopnews.png); width: 620px; height: 457px; color: #FFFFFF;">
+										<img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/error2.png" onclick="close_comm()" title="Cancel comment" style="position:absolute; left: 580px; top: 25px; cursor:pointer;" height="16" width="16">
+										<input id="cd_n" style="width: 150px; position: absolute; top: 37px; left: 115px; color: #666; padding: 1px; font-size: 11px; border: 1px solid #777; background-color: #FFFFFF;" type="text">
+										<span id="cd_n_err" style="position:absolute; top: 38px; left: 275px;"></span>
+										<span id="cd_t_err" style="position: absolute; top: 71px; left: 115px;"></span>
+										<textarea id="cd_t" style="position: absolute; width: 533px; height: 140px; top: 90px; left: 38px; color: #666; padding: 3px; font-size: 11px; border: 1px solid #777; background-color: #FFFFFF;"></textarea>
+										<input id="cd_e" style="width: 150px; position: absolute; top: 251px; left: 90px; color: #666; padding: 1px; font-size: 11px; border: 1px solid #444; background-color: #FFFFFF;" type="text">
+										<button id="cd_btn" type="button" onclick="submit_comm(352365)" style="position: absolute; width: 160px; height: 28px; top: 295px; left: 37px; font-weight: bold; color: #3A4863; #011F5B;">Submit comment*</button>
+										<div id="cd_return" style="height: 50px;"></div>
+										<span id="cd_loader" style="position: absolute; left: 207px; top: 300px;"></span>
+									</div>
+								</td>								
+							</tr>
+							<tr class="contentheadings">
+								<td style="padding-bottom: 5px;" align="left" valign="bottom" width="106"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/news_comadd_2011.png" onclick="show_comm($('dhead'))" style="margin: 0 0 0 20px; cursor: pointer;" height="43" width="77"></td>
+								<td style="padding: 0 0 5px 5px; font-size: 11px; line-height: 24px;" valign="bottom" width="311">
+									49,057 hits
+									· 21 comments 
+								</td>
+							</tr>
+							</tbody></table>
+							
+							<div class="contentheadings"><h2 class="bt" style="margin: 20px 0 5px 0;">MUST-READ RELATED ARTICLES:</h2></div>
+							<table class="news_index_hot" border="0" cellpadding="0" cellspacing="0">
+							<tbody><tr>
+							<td style="padding: 10px 10px 10px 5px;" class="contentheadings" valign="top"><img class="jjmp" onclick="spi__jjmp('aHR0cDovL25ld3Muc29mdHBlZGlhLmNvbS9uZXdzL0xpbnV4LUtlcm5lbC0zLTktMS1Jcy1Ob3ctQXZhaWxhYmxlLWZvci1Eb3dubG9hZC0zNTE0MzYuc2h0bWw=')" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/Linux-Kernel-3-9-1-Is-Now-Available-for-Download-h2.png" style="border: 2px solid #99b0d2; width: 126px; margin: 0 0 10px 0;"><br><a rel="nofollow" href="http://news.softpedia.com/news/Linux-Kernel-3-9-1-Is-Now-Available-for-Download-351436.shtml" style="font-size: 11px;">Linux Kernel 3.9.1 Is Now Available for Download</a></td><td style="padding: 10px 10px 10px 5px;" class="contentheadings" valign="top"><img class="jjmp" onclick="spi__jjmp('aHR0cDovL25ld3Muc29mdHBlZGlhLmNvbS9uZXdzL0xpbnV4LUtlcm5lbC0zLTgtMTItUmVsZWFzZWQtd2l0aC1NYWpvci1JbXByb3ZlbWVudHMtMzUxNDM3LnNodG1s')" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/Linux-Kernel-3-8-12-Released-with-Major-Improvements-h2.png" style="border: 2px solid #99b0d2; width: 126px; margin: 0 0 10px 0;"><br><a rel="nofollow" href="http://news.softpedia.com/news/Linux-Kernel-3-8-12-Released-with-Major-Improvements-351437.shtml" style="font-size: 11px;">Linux Kernel 3.8.12 Released with Major Improvements</a></td><td style="padding: 10px 10px 10px 5px;" class="contentheadings" valign="top"><img class="jjmp" onclick="spi__jjmp('aHR0cDovL25ld3Muc29mdHBlZGlhLmNvbS9uZXdzL0luc3RhbGxpbmctVWJ1bnR1LTEzLTA0LTM0ODU4Mi5zaHRtbA==')" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/Installing-Ubuntu-13-04-h2.jpg" style="border: 2px solid #99b0d2; width: 126px; margin: 0 0 10px 0;"><br><a rel="nofollow" href="http://news.softpedia.com/news/Installing-Ubuntu-13-04-348582.shtml" style="font-size: 11px;">Installing Ubuntu 13.04</a></td><td style="padding: 10px 10px 10px 5px;" class="contentheadings" valign="top"><img class="jjmp" onclick="spi__jjmp('aHR0cDovL25ld3Muc29mdHBlZGlhLmNvbS9uZXdzL1RvcC0xMC1VYnVudHUtQXBwLURvd25sb2Fkcy1mb3ItQXByaWwtMjAxMy0zNTA5NzMuc2h0bWw=')" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/Top-10-Ubuntu-App-Downloads-for-April-2013-h2.png" style="border: 2px solid #99b0d2; width: 126px; margin: 0 0 10px 0;"><br><a rel="nofollow" href="http://news.softpedia.com/news/Top-10-Ubuntu-App-Downloads-for-April-2013-350973.shtml" style="font-size: 11px;">Top 10 Ubuntu App Downloads for April 2013</a></td><td style="padding: 10px 10px 10px 5px;" class="contentheadings" valign="top"><img class="jjmp" onclick="spi__jjmp('aHR0cDovL25ld3Muc29mdHBlZGlhLmNvbS9uZXdzL0tERS00LTEwLTItQnJpbmdzLU92ZXItMTAwLUJ1Z2ZpeGVzLTM0MjM5Ni5zaHRtbA==')" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/KDE-4-10-2-Brings-Over-100-Bugfixes-h2.png" style="border: 2px solid #99b0d2; width: 126px; margin: 0 0 10px 0;"><br><a rel="nofollow" href="http://news.softpedia.com/news/KDE-4-10-2-Brings-Over-100-Bugfixes-342396.shtml" style="font-size: 11px;">KDE 4.10.2 Brings over 100 Bugfixes</a></td>							</tr>
+							</tbody></table>	
+
+							<table id="review_zone" border="0" cellpadding="0" cellspacing="0" width="727">
+							<tbody><tr><td class="contentheadings" align="left"><h2 class="bt" style="margin: 20px 0 0 0;">READER COMMENTS:</h2></td></tr>
+							<tr><td align="right"><div style="margin-top: -5px;">
+							<br><table id="com_oid_21" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #1 by: <b>steve</b> on 29 May 2013, 14:35 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,1,314867)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>I think this cookbook article does show Arch is not that hard to install, and may convince reluctant people to try. <br>
+<br>
+However, cookbooks fall far short on theory, so your reader who installs
+ from this article will be totally helpless to fix anything, because he 
+never read the Arch Beginners Guide. </p></td></tr></tbody></table><table id="com_oid_20" border="0" cellpadding="10" cellspacing="1" width="677"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #1.1 by: <b>lynx</b> on 29 May 2013, 16:51 GMT</td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left" valign="top"><p>"Technology should do the hard work so people can get on doing the things that make them happiest in life"<br>
+<br>
+don't get me wrong steve, but i don't think archlinux should have 3000 
+lines of wikies for installing it and because someone didn't manage to 
+pass the "quest" of typing 100 lines of ascii text on a black terminal 
+is considered reluctant. </p></td></tr></tbody></table><table id="com_oid_19" border="0" cellpadding="10" cellspacing="1" width="677"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #1.2 by: <b>John Doe</b> on 03 Jun 2013, 03:07 GMT</td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left" valign="top"><p>Can I use this tutorial to install Arch on VitualBox as well? Cause it seems that I does not work... </p></td></tr></tbody></table><table id="com_oid_18" border="0" cellpadding="10" cellspacing="1" width="677"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #1.3 by: <b>Marius Nestor</b> on 04 Jun 2013, 06:27 GMT</td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left" valign="top"><p>Yes, read this article for details: https://wiki.archlinux.org/index.php/Installing_Arch_Linux_from_VirtualBox </p></td></tr></tbody></table><br><table id="com_oid_17" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #2 by: <b>jruees</b> on 29 May 2013, 14:42 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,2,314870)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>I think you can omit the '-i' switch for the pacstrap command to avoid having to hit enter 100 times :) </p></td></tr></tbody></table><table id="com_oid_16" border="0" cellpadding="10" cellspacing="1" width="677"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #2.1 by: <b>randomness</b> on 29 May 2013, 20:16 GMT</td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left" valign="top"><p>"Arch
+ Linux defines simplicity as without unnecessary additions, 
+modifications, or complications, and provides a lightweight UNIX-like 
+base structure that allows an individual user to shape the system 
+according to their own needs. In short: an elegant, minimalist 
+approach."<br>
+<br>
+That isnt something that unnexperienced user usually tries to achieve 
+and the installation proccess is not a quest that must be surpassed, its
+ simply a method that tries to assure someone that cant use and 
+configure its system (at least in na initial fase) using a command line 
+wont even try to install it.<br>
+<br>
+Dont take me wrong, being able/unable to install it doesnt make anyone better/worst </p></td></tr></tbody></table><br><table id="com_oid_15" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #3 by: <b>opt1mus</b> on 29 May 2013, 15:09 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,3,314879)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>Where
+ you instruct the reader to install sudo, you've included two commands, 
+one of which only searches the sync database; 'pacman -Ss', that's not 
+necessary if you've just installed it. </p></td></tr></tbody></table><br><table id="com_oid_14" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #4 by: <b>microMXL</b> on 29 May 2013, 15:10 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,4,314880)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>I think its better to read the Arch beginners guide, but this is useful too :)<br>
+<br>
+Love some arch </p></td></tr></tbody></table><br><table id="com_oid_13" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #5 by: <b>kaddy</b> on 29 May 2013, 16:54 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,5,314915)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>ffs<br>
+People... just read the arch wiki beginners guide to install and understand what is going on.... nuff said </p></td></tr></tbody></table><br><table id="com_oid_12" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #6 by: <b>Marius Nestor</b> on 29 May 2013, 18:03 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,6,314934)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>Thanks for your kind words guys. We made the necessary adjustments! </p></td></tr></tbody></table><br><table id="com_oid_11" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #7 by: <b>me</b> on 30 May 2013, 04:18 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,7,315060)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>I don't like rolling distro..burdened me to do regular update.<br>
+<br>
+Like an LTS release ! </p></td></tr></tbody></table><br><table id="com_oid_10" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #8 by: <b>NFI</b> on 30 May 2013, 09:41 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,8,315099)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>Trying
+ to install after only having read this would be a very bad idea. 
+However, this did help me catch the mistake I made in my first attempted
+ install when I had only read the beginner's guide. </p></td></tr></tbody></table><br><table id="com_oid_9" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #9 by: <b>IcePik</b> on 30 May 2013, 09:46 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,9,315101)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>save in nano is ctrl+o not ctrl+w </p></td></tr></tbody></table><table id="com_oid_8" border="0" cellpadding="10" cellspacing="1" width="677"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #9.1 by: <b>Marius Nestor</b> on 30 May 2013, 09:51 GMT</td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left" valign="top"><p>Indeed! Thanks for noticing and reporting. We've fixed the typo. </p></td></tr></tbody></table><br><table id="com_oid_7" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #10 by: <b>Shaquille</b> on 30 May 2013, 16:28 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,10,315181)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>Why Arch Linux doesn't provide a GUI installer??</p></td></tr></tbody></table><table id="com_oid_6" border="0" cellpadding="10" cellspacing="1" width="677"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #10.1 by: <b>Amboi!</b> on 25 Jun 2013, 11:26 GMT</td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left" valign="top"><p>Because it is for average user that want to improve knowledge about Linux. For GUI Installer,we have Manjaro Linux. </p></td></tr></tbody></table><br><table id="com_oid_5" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #11 by: <b>Alpar</b> on 22 Jul 2013, 16:23 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,11,323196)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>Very
+ nice tutorial, the problem is the amd catalyst command not working. 
+Cannot find  catalyst-dkms. How can i install amd catalyst? </p></td></tr></tbody></table><br><table id="com_oid_4" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #12 by: <b>snoopo71</b> on 24 Jul 2013, 23:59 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,12,323540)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>Very
+ useful guide, without it I'd never installed arch. I've had only an 
+issue, I only have a wifi usb adapter to connect to my network, an there
+ is no link/explanation on how to connect to a network via wifi.<br>
+you can go to 
+https://wiki.archlinux.org/index.php/Beginners_Guide#Wireless during the
+ installation. The simplest way I found after the installation to have 
+internet over wifi is to download "iw, wifi-config, wpa_supplicant and 
+wpa_actiond with their dependencies" to an usb key from my laptop and 
+then install it with pacman -U.<br>
+<br>
+Thx for the guide. </p></td></tr></tbody></table><br><table id="com_oid_3" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #13 by: <b>ger</b> on 18 Aug 2013, 10:47 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,13,326374)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>This
+ guide used to work great, since the start of August 2013 i haven't got 
+it to work with this same guide. after the initial reboot the setting up
+ of the wired ethernet fails to start the service. Trying to join the 
+arch forum for help was pointless as their validation question requires 
+output from a terminal. Seeing as I was not about to write out the 
+question to type in the write out the answer and reboot to windows to 
+continue I gave up. Seems arch want to remain eliteist in some respects 
+and forget no everyone is a genius..... </p></td></tr></tbody></table><br><table id="com_oid_2" border="0" cellpadding="10" cellspacing="0" width="727"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #14 by: <b>torulfr</b> on 19 Jan 2014, 15:55 UTC</td><td class="contentheadings" align="right"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/message_16.gif" align="absmiddle" height="16" width="16"> <a href="#add_review_form" onclick="show_comm(this,14,355185)">reply to this comment</a></td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td colspan="2" class="contentheadings" style="font-size: 11px;" align="left" valign="top"><p>partition(sda1)[LinuxSwap] " Now, let’s activate the swap partition with the following command:<br>
+<br>
+swapon /dev/sda2<br>
+<br>
+Let’s mount the partitions:<br>
+<br>
+mount /dev/sda1 /mnt " </p></td></tr></tbody></table><table id="com_oid_1" border="0" cellpadding="10" cellspacing="1" width="677"><tbody><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_1.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left">Comment #14.1 by: <b>Jeff (Fu-rch) Story</b> on 16 Feb 2014, 01:31 GMT</td></tr><tr style="background-image: url(http://s1.softpedia-static.com/base_img/news_combg_2.png?v=4); background-repeat: repeat-y;"><td class="contentheadings" align="left" valign="top"><p>For
+ an easier solution to for the daunting task of installing Arch, try my 
+live DVD authentic Arch Linux installer. The FU-rch installer is the 
+first in the history of Arch to have available, a GUI installer.<br>
+<br>
+For more info: http://www.jeffstory.org/wordpress/</p></td></tr></tbody></table>							</div></td></tr>
+							</tbody></table>	
+							
+							<img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/contentspacer_002.gif" class="contentspacer10" height="1" width="727">
+							<div style="color: #888888; font-size: 10px; clear: both;">Copyright © 2001-2014 Softpedia. Contact/Tip us at <img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/newseditor.gif" style="margin-bottom: -2px;" height="10" width="150"></div>
+							</td>
+						</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				</tbody></table>
+			</td>
+			<td class="back_news_r" height="463" valign="top" width="12"></td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/bottom_back_news.gif" height="45" width="974">
+<table class="margin_bottom5px" border="0" cellpadding="0" cellspacing="0" width="960"><tbody><tr>
+<td colspan="3" class="fontsize11" align="center"><img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/contentspacer.gif" class="contentspacer15" height="1" width="960"><br>
+<a rel="nofollow" href="http://win.softpedia.com/" title="Visit the Windows section"><img alt="Windows" title="Visit the Windows section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_windows.gif" class="padding_right15px" border="0" height="34" width="103"></a><a rel="nofollow" href="http://games.softpedia.com/" title="Visit the Games section"><img alt="Games" title="Visit the Games section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_games.gif" class="padding_right15px" border="0" height="34" width="81"></a><a rel="nofollow" href="http://drivers.softpedia.com/" title="Visit the Drivers section"><img alt="Drivers" title="Visit the Drivers section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_drivers.gif" class="padding_right15px" border="0" height="34" width="93"></a><a rel="nofollow" href="http://mac.softpedia.com/" title="Visit the Mac section"><img alt="Mac" title="Visit the Mac section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_mac.gif" class="padding_right15px" border="0" height="34" width="61"></a><a rel="nofollow" href="http://linux.softpedia.com/" title="Visit the Linux section"><img alt="Linux" title="Visit the Linux section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_linux.gif" class="padding_right15px" border="0" height="34" width="74"></a><a rel="nofollow" href="http://webscripts.softpedia.com/" title="Visit the Scripts section"><img alt="Scripts" title="Visit the Scripts section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_scripts.gif" class="padding_right15px" border="0" height="34" width="91"></a><a rel="nofollow" href="http://mobile.softpedia.com/" title="Visit the Mobile section"><img alt="Mobile" title="Visit the Mobile section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_mobile.gif" class="padding_right15px" border="0" height="34" width="84"></a><a rel="nofollow" href="http://handheld.softpedia.com/" title="Visit the Handheld section"><img alt="Handheld" title="Visit the Handheld section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_handheld.gif" class="padding_right15px" border="0" height="34" width="110"></a><a rel="nofollow" href="http://news.softpedia.com/" title="Visit the News section"><img alt="News" title="Visit the News section" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/f_news.gif" border="0" height="34" width="71"></a><br>
+<img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/contentspacer_002.gif" class="contentspacer15" height="1" width="960"><br>
+<a rel="nofollow" href="http://www.softpedia.com/user/submit.shtml">SUBMIT PROGRAM</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a rel="nofollow" href="http://www.softpedia.com/advertise/">ADVERTISE</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a rel="nofollow" href="http://www.softpedia.com/user/help.shtml">GET HELP</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a rel="nofollow" href="http://www.softpedia.com/user/feedback.shtml">SEND US FEEDBACK</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a rel="nofollow" href="http://www.softpedia.com/user/backend.shtml">RSS FEEDS</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a rel="nofollow" href="http://www.softpedia.com/user/send_update.shtml">UPDATE YOUR SOFTWARE</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a rel="nofollow" href="http://forum.softpedia.com/" target="_blank">ROMANIAN FORUM</a><br>
+<img src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/contentspacer.gif" class="contentspacer15" height="1" width="960"></td>
+</tr>
+<tr>
+<td class="footer" style="line-height: 14px;" align="left" valign="top" width="240"><nobr>© 2001 - 2014 <span itemprop="name">Softpedia</span>. All rights reserved.</nobr><br>Softpedia® and the Softpedia® logo are<br>registered trademarks of SoftNews NET SRL.</td>
+<td class="footer" align="left" valign="top" width="510"><a rel="nofollow" href="http://www.softpedia.com/user/copyright_information.shtml">Copyright Information</a> | <a rel="nofollow" href="http://www.softpedia.com/user/privacy.shtml">Privacy Policy</a> | <a rel="nofollow" href="http://www.softpedia.com/user/terms.shtml">Terms of Use</a></td>
+<td class="footer" align="right" valign="top" width="200"><form action="/dyn-search.php" method="post" style="margin:0;"><input name="search_term" value="Search" onclick="this.value='';" type="text"> <input value="Go" type="submit"></form></td>
+</tr></tbody></table>
+<br>
+<!-- SPJS -->
+<script type="text/javascript" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/a.js"></script><script type="text/javascript">var tt_size = readCookie("n4tt_size"); if(tt_size) tt_size = parseInt(tt_size); else tt_size = 12; var tt_lh = readCookie("n4tt_lh"); if(tt_lh) tt_lh = parseInt(tt_lh); else tt_lh = 16; if(tt_size != 12 && tt_lh != 16) ttsz_set(tt_size, tt_lh);</script><script>
+$(window).ready(function(){
+	window.aegal_xdsect='news'; $('a.s_gallery').swipebox(); $('.videospot a').swipebox();
+	var rgx=/^#*sgal_/g; if(window.location.hash && rgx.test(window.location.hash)) $('#sp'+window.location.hash.replace('#', '').substr(1)).click();
+});
+</script>
+ 
+<script type="text/javascript">if (top.location != self.location) top.location.replace(self.location);</script>
+<!-- twitter async--><script async="" src="A%20Beginners%27%20Guide%20to%20Installing%20Arch%20Linux_files/widgets.js" charset="utf-8"></script>
+</div></body></html>

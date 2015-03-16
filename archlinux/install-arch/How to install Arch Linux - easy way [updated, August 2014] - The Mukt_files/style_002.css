@@ -1,0 +1,109 @@
+/*
+Theme Name:     Newspaper Child theme
+Theme URI: 		http://themeforest.net/user/tagDiv/portfolio
+Description:    Child theme made by tagDiv
+Author:         tagDiv
+Author URI: 	http://themeforest.net/user/tagDiv/portfolio
+Template:       Newspaper                             
+Version:        1
+*/
+
+@import url("../Newspaper/style.css");
+
+
+/*  ----------------------------------------------------------------------------
+    Your custom style.... here :)
+*/
+@media (min-width: 1200px) {
+   #meta-info,.meta-info {
+    color: #000;
+    font-family: Droid Serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 19px;
+    font-style:italic;
+}
+}
+
+
+#.body .td-post-text-content, .page p, .bbpress p {
+    line-height: 21px;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    background-color: #fafafa;
+    border: 1px solid #aaa !important;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+
+blockquote p {
+    border-left: 3px solid #ddd;
+    color: #777 !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 27px !important;
+    padding-left: 24px;
+    text-align: left !important;
+    clear:both;
+}
+
+pre, .pre {
+    background: none repeat scroll 0 0 #c60019 !important;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    color: #FFF !important;
+    display: block;
+    font-size: 13px;
+    line-height: 21px;
+    margin: 0 0 10.5px;
+    padding-left: 8px !important;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+#.post .td-sub-title {
+    #color: #c60019;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 23px;
+    margin-bottom: 14px;
+    position: relative;
+    top: -7px;
+}
+
+frontad, .frontad {
+padding-bottom:20px; 
+text-align:center;
+}
+
+
+.post, .page, .mce-content-body {
+   # font-family: "Droid Serif";
+    font-size: 16px;
+    line-height: 23px;
+}
+
+ad3 {
+text-align:left;}
+
+.td_mod3 .entry-title a, .td_mod3 .entry-title {
+    font-size: 15px !important;
+    line-height: 21px !important;
+    position: relative;
+}
+
+.wp-caption-text {
+    background: linear-gradient(to bottom, #aaa 18%, #fff 71%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #444444;
+    #font-family: 'Open Sans',arial,sans-serif !important;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 !important;
+    padding: 5px 0 23px;
+    text-align: center;
+}
