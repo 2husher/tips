@@ -1,0 +1,49 @@
+1. Скачиваем официальный iso установщик с сайта
+2. Прожигаем на CD-RW: прожигать на USB не рекомендуется, потому что единственная корректно делающая прога UltraISO портить прожиг, добавляя от себя ldlinux.sys версии 6.02, а последний дистрибутив версии 6.03 и его ldlinux.c32 не совместими с sys от прожигателя. Burn Aware Free при прожиге на CD не ставит ничего от себя.
+3. Загружаемся с CD.
+4. lsblk - выбираем диск для установки линукса /dev/sdaX
+5. cfdisk - для изменений файловой системы - /, swap
+6. mkfs.ext4 /dev/sdaX
+   mkswap /dev/sdaY
+   swapon /dev/sdaY
+7. mount /dev/sdaX /mnt
+8. pacstrap -i /mnt base base-devel
+9. genfstab -U -p /mnt >> /mnt/etc/fstab
+   nano /mnt/etc/fstab
+10. arch-chroot /mnt
+    nano /etc/locale.gen -> en_US.UTF-8 UTF-8
+    locale-gen
+    echo LANG=en_US.UTF-8 > /etc/locale.conf
+    export LANG=en_US.UTF-8
+11. ln -s /usr/share/zoneinfo/Europe/Minsk > /etc/localtime 
+12. hwclock --systohc --utc
+13. echo ai > /etc/hostname
+14. pacman -Sy
+15. passwd
+    useradd -m -g users -G wheel,storage,power -s /bin/bash mukt
+    passwd ai
+    pacman -S sudo
+    EDITOR=nano visudo -> %wheel ALL=(ALL) ALL
+    pacman -S bash-completion
+16. pacman -S grub
+    grub-install --target=i386-pc --recheck /dev/sda
+    pacman -S os-prober
+    grub-mkconfig -o /boot/grub/grub.cfg
+    ip link
+    systemctl enable dhcpcd@_name_of_interface.service
+    systemctl start dhcpcd@_name_of_interface.service
+    exit
+    umount -R /mnt
+    shutdown now
+17. pacman -S xorg-server xorg-server-utils xorg-xinit
+    pacman -S mesa
+    sudo pacman -S xf86-video-ati
+    pacman -S xf86-input-synaptics
+    pacman -S xorg-twm xorg-xclock xterm
+    startx
+Ставим MATE, графическое о кружение
+18. pacman -S mate mate-extra
+Устанавливаем wifi
+19. pacman -S networkmanager
+20. systemctl start NetworkManager
+21. nmcli dev wifi connect <SSID> password <PASSWD>
