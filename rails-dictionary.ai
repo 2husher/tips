@@ -335,3 +335,63 @@ TODO: круговая диаграмма - соотношение noun, adjecti
 
 * find(id) не может искать nil
 find_by(id: nil) может обработать nil
+
+* How do you discard unstaged changes in git?
+#This stashes them
+git stash save --keep-index
+
+#This gets rid of the stash and actually drops it
+git stash drop
+
+* Remove local (untracked) files from my current Git branch?
+git clean -f
+
+* how to transfer my data in button_to?
+
+* для присваивания tags для entity никаких дополнительных save или update не требуется
+
+* array.find несуществующее значение  ->  выдает ошибку, а не false
+
+* easy, intermediate, difficult
+
+
+user_id, tag_id, word_id
+
+w t u
+1 1 1
+1 2 2
+2 1 1
+2 3 2
+
+
+word_id, tag_id
+1        1
+1        2
+2        1
+2        3
+
+
+word_id, user_id
+1        1
+1        2
+2        1
+2        2
+
+
+user_id, tag_id
+1        1
+2        2
+1        1
+2        3
+
+1. has_many through: для users, tags через labels
+2. has_many_and_belongs_to_many для entities и labels
+
+tags = tags.split(" ").map do |tag|
+  current_user.tags.where(name: tag).first_or_create
+end
+
+*
+first_or_create не работает для ассоциаций как has_many through:
+  tag = user.tags.where(name: tag).first_or_create
+  работает только для последнего члена - tag - и создает tag без привязки к user

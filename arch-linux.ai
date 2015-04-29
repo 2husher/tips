@@ -1,0 +1,12 @@
+sudo pkgfile --update
+
+pkgfile abiword
+pacman -Ss abiword
+
+pkgfile -l abiword
+
+sudo pacman -Sc
+
+journalctl --since "200 min ago"
+
+systemctl

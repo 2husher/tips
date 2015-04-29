@@ -1,0 +1,16 @@
+* синглтон метод def obj.talk
+* в методах ruby нет переопределения. Имя должно быть только одно, независимо от числа параметров, как это с++
+* все присвается по ссылке. Если изменить по одной ссылке значение, то изменится и по другой
+* локальные переменные не видны внутри функций
+* переменные в методы передаются всегда по ссылке
+* есть .dup и есть .freeze
+* как интерпретируется bareword: keyword или если с =, то local variable или method call
+
+* переопределение метода - заменяет его
+* переотрытие класса - дополняет его
+* есть @instance_variable объекта, а есть @instance_variable класса и они разные
+* setter: def setter=(arg) и вызов obj.setter=(34) или синтаксический сахар obj.setter = 34
+* attr_accessor :price => def price=(price); @price = price; end и def price; @price; end
+* Object - 52 instance methods, BasicObject - 7 instance methods(Blank Class)
+* Object.new - посылаем сообщение классу как объекту
+* Object.class -> Class. instance_class = Class.new. instance_class.new - посылаем сообщение new классу Class через забинжиную instance_class переменную
